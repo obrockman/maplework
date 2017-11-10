@@ -1,0 +1,117 @@
+<!DOCTYPE html> 
+<head>
+    <style>
+    /* * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }    */
+    body {
+        background: white;
+        color: black;
+        font-family: 'Raleway', sans-serif;
+        /* font-family: 'Open Sans Condensed', sans-serif; */
+        /* font-family: 'Quicksand', sans-serif; */
+
+    }
+    .container {
+        display:grid;
+        border: 1px solid green; 
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: minmax(100px, auto);
+        grid-gap: 1px;
+        
+    }
+    /* Navigaiton */
+    header {
+        color: #9f9c9c;
+        /* padding: 20px 0;
+        margin-bottom: 40px; */
+        text-transform: uppercase;
+        border-bottom: 2px solid #b0e0ea;
+        display: grid;
+        grid-row:1;
+        grid-column: 1/6;
+        justify-content:center;
+        border: 1px solid blue; 
+        /* justify-self: center; */
+        
+    }
+    header nav ul li {
+        display: inline;
+        list-style-type: none;   
+        border: 1px solid red; 
+        justify-content:center;
+    }
+    ul {
+        border: 1px solid orange;
+        padding: 0;
+        justify-content:stretch;
+    }
+    a {
+        text-decoration: none;
+        color: #9f9c9c;
+        margin: 10px;  
+    }
+   
+    .main {
+        /* grid */
+    }
+    .hero-img {
+        display: grid;
+        height:400px;
+        /* width: 95%; */
+        max-width: 100%;
+        vertical-align: middle;
+        box-shadow: 6px 6px 23px 0 rgba(26, 45, 63, .37);
+        border: 1px solid lightcoral;
+        background-image: url("images/bikestreet.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    footer {
+        display:grid;
+        grid-area: footer;
+        border: 1px solid purple; 
+    }
+    </style>
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Quicksand|Raleway" rel="stylesheet">
+<link rel="stylesheet" href="css/animations.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sticky/1.0.4/jquery.sticky.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-localScroll/2.0.0/jquery.localScroll.min.js"></script>
+<!-- <script src="js/waypoints.js"></script> -->
+
+</head>
+
+<body>
+    <div class='container'>
+        <header>
+            <nav> 
+                <ul>
+                    <li><a href="#">Contact</a></li> 
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Home</a></li>
+                </ul>
+            </nav> 
+        </header>
+
+        <div class='hero-img'></div>
+
+        <div class='main'>
+            
+                <h1>Lorem ipsum dolor sit amet.</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur magnam debitis enim cumque dolore totam corporis blanditiis, magni aut quo accusantium fuga facilis soluta voluptate!</p>
+          
+        </div><!--/main-->
+
+        <footer>
+            <h3></h3>
+            <p></p>
+        </footer>
+    </div>
+</body>

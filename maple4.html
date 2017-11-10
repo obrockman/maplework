@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Quicksand|Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="css/animations.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sticky/1.0.4/jquery.sticky.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-localScroll/2.0.0/jquery.localScroll.min.js"></script>
+    <!-- <script src="js/waypoints.js"></script> -->
+
+    <style>
+    * {
+        /* border: 1px solid; */
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'Raleway', sans-serif;
+        /* font-family: 'Open Sans Condensed', sans-serif; */
+        /* font-family: 'Quicksand', sans-serif; */
+    }
+    header{
+       padding: 40px;
+    }
+    /* NAVIGATION */
+    ul{
+        text-align:center;
+        list-style-type: none;
+       
+    }
+    nav li {
+        display: inline;   
+    }
+    a {
+        color: #9f9c9c;
+        margin: 10px;  
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+    /* WHOLE PAGE */
+    .container {
+        display: flex;
+        flex-direction: column;
+        height: 5000px;
+        justify-content: center;
+        color: #696767;
+        /* box-sizing: border-box;      */
+    }
+    /* ALL SECTIONS */
+    .section {
+        display:flex; 
+        flex: 3;
+        padding: 0 0 5% 0;
+        /* border: 2px solid blue; */
+        /* justify-content: stretch; */
+    }
+    /* SPACE DUH */
+    .space {
+        flex: 2;
+    }
+    /* LINE SEPARATION  */
+    .line {
+        flex: 1;
+        justify-content: center;
+        border-right: 2px solid #9f9c9c;
+        height: 50%;
+        margin-right: 50%;
+        margin-top: 10%;
+        /* padding: 5% 0 0 0; */
+    }
+    /* HORIZONTAL LINE  */
+    hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #9f9c9c;
+        margin: 1em 0;
+        padding: 0;
+        width: 30%;
+
+    }
+    /* SECTION ONE  */
+    .one {
+        display:flex;
+        
+        /* flex: 1; */
+
+    }  
+    .main{
+        flex-direction: column;
+        justify-content: center;
+        flex:1 ;
+        margin: auto;
+        flex-flow: row;
+        padding:  0 0 0 10%;
+        margin-right: -10%;
+        z-index: 9;
+        width: 25%;
+        /* text-align: center; */
+        /* align-items: center; */
+        /* align-content: center; */
+        /* justify-content: center; */
+        /* padding: 50%; NOPE */
+        /* align-self: center; changed formating for all boxes - not desired effect.. */
+    }
+    .main > h1 {
+        font-size: 3.5vmax;
+        line-height: 6vh;
+        /* text-transform: uppercase; */
+    }
+    .main > p {
+        font-size: 2vh;
+        text-transform: uppercase;
+        line-height: 3vh;
+    }
+    .img {
+        background-image: url("images/bulbsinwindow.jpeg") ; 
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        flex:3;
+        margin: 1% 5% 1% 1%;
+        opacity: .7;
+        min-height: 500px;
+        /* flex-basis: 30%;  */
+    }
+    .quote {
+        flex: .3;
+        text-align: center;
+        margin: 3% 25%;
+        line-height: 3vh;
+        /* text-transform: uppercase;  */
+        /* font-size: 1.5vh; */
+    }
+    
+    /* SECTION TWO */
+    .second {
+        flex:1;
+        /* margin: auto; */
+        padding:  0 0 0 5%;
+        /* margin-right: -10%; */
+        z-index: 15;
+        /* width: 25%; */
+    }
+    .second > h1 {
+        padding: 8%;
+    }
+    @media (max-width: 500px) {
+        body {
+            background: #3f3e3e;
+        }
+        /*change hero text to cover photo completely*/
+        /*change section two photos to keep better size & text line-height to be standard*/
+    }
+
+    .second > p {
+        padding: 2%;
+        line-height: 3.5vh;
+    }
+    /* LEFT IMAGE */
+    .img-two-one {
+        flex: 1;
+        background-image: url("images/bulbsinwindow.jpeg") ; 
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        width: 50%;
+        height: auto;
+        /* margin: 20px 20px 20px 20px;  */
+        /* margin-right: -5%;
+        margin-bottom: -3%;
+        margin-top: 5%;
+        margin-left: 5%; */
+        margin: 5% -5% 0% 5%;
+        z-index: 9;
+        opacity: .9;
+        /* padding: 1%; */
+    }
+    /* RIGHT IMAGE */
+    .img-two-two {
+        flex: 1;
+        background-image: url("images/bulbsinwindow.jpeg") ; 
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%; 
+        width: 50%;
+        height: auto;
+        margin: 0 5% 5% 1%;
+        opacity: .7;
+        /* padding: 1%; */
+
+
+        /* ************************************************** */
+        /* put both images in a separate conatiner and min-height --> 
+        that way relationship between the images will be constant */
+         /* ************************************************** */
+     
+    }
+    .number-one {
+        position: absolute;
+        /* left: 0px;
+        top: -10%; */
+        z-index: -9;
+        /* font-family: 'Open Sans', sans-serif; */
+        color: #d6d5d5;
+        font-size: 5em;
+        line-height: 1em;
+        font-weight: 700;
+        margin: 15px 0 0 -2%;
+    }
+
+    /* SECTION THREE */
+    .third {
+        flex:1;
+        order: 2;
+        /* margin: auto; */
+        padding:  0 0 0 5%;
+        /* margin-right: -10%; */
+        z-index: 15;
+        /* width: 25%; */
+    }
+    .third  > h1 {
+        position: relative;
+        padding: 5%;
+    }
+    .third  > p {
+        padding: 2%;
+        line-height: 3.5vh;
+    }
+    .img-three-one {
+        flex: 1;
+        order: 1;
+        background-image: url("images/bulbsinwindow.jpeg") ; 
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%; 
+        width: 50%;
+        height: auto;
+        margin: 0 0 0 5%;
+        opacity: .7;
+     
+    }
+    .number-two {
+        position: absolute;
+        /* left: 53%;
+        top: 205%; */
+        z-index: -9;
+        /* font-family: 'Open Sans', sans-serif; */
+        color: #d6d5d5;
+        font-size: 5em;
+        line-height: 1em;
+        font-weight: 700;
+        margin: 15px 0 0 -2%;
+        /* padding: 3%; */
+    }
+
+    /* SECTION FOUR */
+    .fourth {
+        flex:1;
+        order: 1;
+        /* margin: auto; */
+        padding:  0 0 0 5%;
+        /* margin-right: -10%; */
+        z-index: 15;
+        /* width: 25%; */
+    }
+    .fourth  > h1 {
+        position: relative;
+        padding: 5%;
+    }
+    .fourth > p {
+        padding: 2%;
+        line-height: 3.5vh;
+        margin-right: 2%;
+    }
+    .number-three {
+        position: absolute;
+        /* left: 53%;
+        top: 205%; */
+        z-index: -9;
+        /* font-family: 'Open Sans', sans-serif; */
+        color: #d6d5d5;
+        font-size: 5em;
+        line-height: 1em;
+        font-weight: 700;
+        margin: 15px 0 0 -2%;
+        /* padding: 3%; */
+    }
+    .img-four-one {
+        flex: 1;
+        order: 2;
+        background-image: url("images/bulbsinwindow.jpeg") ; 
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%; 
+        width: 50%;
+        height: auto;
+        margin: 0 5% 0 0 ;
+        opacity: .7;
+     
+    }
+    /* SECTION FIVE */
+    .fifth {
+        flex:1;
+        /* order: 1; */
+        margin: 0 auto;
+        /* padding:  0 0 0 5%; */
+        /* margin-right: -10%; */
+        /* z-index: 15; */
+        text-align: center;
+        /* width: 25%; */
+    
+    }
+    .fifth > h1 {
+        /* position: relative; */
+        /* padding: 5%; */
+    }
+    .fifth > p {
+        /* padding: 2%; */
+        line-height: 3.5vh;
+        /* margin-right: 2%; */
+    }
+    /* LISTS */
+    .location {
+        text-align: center;
+        /* margin-left:15%; */
+        margin-top: 10%;
+
+    }
+    .location > ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;  /* add media query that makes 1 fr for single column */
+        align-self: center;
+        /* flex:2;
+        flex-direction: column;
+        flex-wrap: wrap; */
+        text-align: center;
+        /* padding: 2%;
+        line-height: 2.5vh; */
+        margin: 3% 15%;
+        line-height: 3;
+       
+    }
+    .location > hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #9f9c9c;
+        margin: 1% auto;
+        padding: 0;
+        width: 50%;
+    }
+    .location > p {
+        margin: 0 15%;
+    }
+    .amenities {
+        text-align: center;
+        /* margin-left:15%; */
+        margin-top: 10%;
+
+    }
+    .amenities > ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;  /* add media query that makes 1 fr for single column */
+        align-self: center;
+        /* flex:2;
+        flex-direction: column;
+        flex-wrap: wrap; */
+        text-align: center;
+        /* padding: 2%;
+        line-height: 2.5vh; */
+        margin: 3% 15%;
+        line-height: 3;
+       
+    }
+    .amenities> hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #9f9c9c;
+        margin: 1% auto;
+        padding: 0;
+        width: 30%;
+    }
+    
+    
+    /*media query for mobile to make text cover whole image */ 
+
+    </style>
+
+</head>
+
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Contact</a></li> 
+                <li><a href="#">About</a></li>
+                <li><a href="#">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class='container'>
+        <!-- SECTION ONE -->
+        <div class='section one'>
+            <div class='item main'>
+                    <!-- <p>the</p> -->
+                    <h1>Give more meaning to<br><u><i>workplace culture</i></u></h1>
+            </div>
+            <div class='img'></div>
+        </div> <!--section-one-->
+                <div class='quote'>
+                    <p>Your office should be more than a place to work; it should be a place of inspiration. For the independent professional, MapleWork offers the freedom to build your brand, while the thriving creative culture of Maplewood will help you grow your vision. </p> 
+                </div>
+                <div class="line"></div>  
+                <div class='space'></div>
+                
+
+        <!-- SECTION TWO -->
+        <div class='section two'>
+            <div class='item second'>
+                    <p class='number-one'>01</p>
+                    <hr/>
+                    <h1>Who We Are</h1>
+                        <p>Nestled in a tree-lined campus, MapleWork brings all the excitement of the city, with the safety and convenience of the Maplewood area. Join the network of national brands and strategic thinkers, while enjoying access to the neighborhood’s unique restaurants, one of a kind shops, bustling breweries and craft coffee houses. In addition to location, the MapleWork space provides comforts such as wifi, coffee, free parking, printers and additional meeting rooms.</p> 
+                        <!-- <br><p>The space itself is unlike any other. Located on the first floor of a renovated school attached to a former church, the workplace is both modern and inviting. . . </p> -->
+            </div>
+            <div class='img-two-one'></div>
+            <div class='img-two-two'></div>
+        </div> <!--section-two-->
+
+                <div class="line"></div>
+                <div class='space'></div>
+               
+
+        <!-- SECTION THREE -->
+        <div class='section three'>
+            <div class='item third'>
+                    <p class='number-two'>02</p>
+                    <hr/>
+                    <h1>Where We Are</h1>
+                        <p>The lively community of Maplewood offers a vibrant main street that is the hub of award-winning food purveyors and craft brewers. Voted as one of the top “hipster” markets in America, Maplewood takes pride in its local businesses and neighborhood events. Situated between St. Louis’ two main highways that connect the suburbs with the city, the town claims it’s “somewhere between Mayberry and Metropolis.” </p>
+                        <!-- link websites -->
+            </div>
+            <div class='img-three-one'></div>
+        </div> <!--section-three-->
+        
+        <div class='location'>
+                <h2>From the MapleWork office, enjoy a short stroll to:</h2>
+                <hr/>
+                <ul>
+                        <li>Schlafly Bottleworks</li> 
+                        <li>US Postal Service </li>
+                        <li>Foundation Grounds</li>
+                        <li>The Side Project Cellar</li>
+                        <li>Strange Donuts</li>
+                        <li>Tapped</li>
+                        <li>Gus’s World Famous Fried Chicken</li>
+                        <li>La Cosecha Coffee Roasters</li>
+                        <li>The Crow’s Nest </li>
+                        <li>The Muddled Pig</li>
+                        <li>The Post Sports Bar & Grill</li>
+                        <li>The Blue Duck</li>
+                        <li>Saratoga Lanes</li>
+                        <li>Much, much more!</li>
+                    </ul>
+                    <p>Explore all of Maplewood’s events and shopping directory, and learn more about St. Louis’s thriving network of startups and national brands. </p>
+            </div>
+    
+                <div class="line"></div>
+                <div class='space'></div>
+                
+
+        <!-- SECTION FOUR -->
+        <div class='section four'>
+            <div class='item fourth'>
+                    <p class='number-three'>03</p>
+                    <hr/>
+                    <h1>How We Work</h1>
+                        <p>The space offers a combination of cubicles, private offices and conference areas starting at $275 a month. </p>         
+            </div>
+            <div class='img-four-one'></div>
+        </div> <!--section-four-->
+
+        <div class='amenities'>
+            <h1>Amenities</h1>
+            <hr/>
+            <ul>
+                    <li>Free Parking</li> 
+                    <li>WiFi</li>
+                    <li>Complimentary coffee and tea</li>
+                    <li>Standard cleaning services</li>
+                    <li>Access to spacious outdoor patio</li>
+                    <li>Receptionist 9am-5pm* </li>
+                    <li>Mail service*</li>
+                    <li>24/7 access*</li>
+                    <li>Landline phone*</li>
+                    <li>100 black and white copies a month*</li>
+                    <li>Access to conference rooms*</li>
+                    <li>Access to additional office spaces*</li>
+                    <li>Access to industrial kitchen*</li>
+                </ul>
+                <p style="color:#880202">*additional terms may apply</p>
+        </div>
+
+                <div class="line"></div>  
+                <div class='space'></div>
+
+        <!-- SECTION FIVE -->
+        <div class='section five'>
+            <div class='item fifth'>
+                <h1>Get Involved</h1>
+                    <p>For more information or to schedule a tour please contact Sharon Ayres:</p>
+                    <!-- email submission field -->
+            </div>
+        </div> <!--section-five-->
+
+        <footer></footer>
+    </div> <!--/grid-container-->
+
+</body>
+
+
+
